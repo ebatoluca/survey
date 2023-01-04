@@ -1,0 +1,8 @@
+{
+    "sanctum.csrf-cookie": "sanctum\/csrf-cookie",
+    "ignition.healthCheck": "_ignition\/health-check",
+    "ignition.executeSolution": "_ignition\/execute-solution",
+    "ignition.updateConfig": "_ignition\/update-config",
+    "": "api\/user",
+    "app": "{any?}"
+}

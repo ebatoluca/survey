@@ -46,6 +46,10 @@ class RouteJson extends Command
     public function handle()
     {
 
+        $path = base_path('resources/assets/json');
+
+        if (!file_exists($path)) mkdir($path, 0777, true);
+
         $routes = [];
 
         foreach ($this->router->getRoutes() as $route) {
