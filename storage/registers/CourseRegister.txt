@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\Course' => 'App\Policies\CoursePolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// Course model
+
+		    \App\Http\Events\Course\Events\CreateEvent::class => [
+
+		        \App\Http\Events\Course\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\Course\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\Course\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Course\Events\ExportEvent::class => [
+
+		        \App\Http\Events\Course\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\Course\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\Course\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\Course\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Course\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\Course\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Course\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\Course\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('course')
+	->as('course.')
+	->group(base_path('routes/api/models/course.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import courseRoutes from './group/course'
+
+	// In the export section write
+
+	...courseRoutes,
