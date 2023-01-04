@@ -1,0 +1,50 @@
+import * as middleware from '@router/middleware'
+
+export default [
+	{
+		path: 'user',
+		name: "AdminUsers",
+		component: () => import (/* webpackChunkName: "AdminUsers"*/ "@views/admin/user/AdminUsers"),
+		meta: {
+			title: 'Admin Users',
+			middleware: [
+				middleware.auth
+			]
+		},
+		children: [
+			{
+				path: 'create',
+				name: "AdminCreateUser",
+				component: () => import (/* webpackChunkName: "CreateUser"*/ "@views/admin/user/CreateUser"),
+				meta: {
+					title: 'User | Create',
+					middleware: [
+						middleware.auth
+					]
+				}
+			},
+			{
+				path: ':id/show',
+				name: "AdminShowUser",
+				component: () => import (/* webpackChunkName: "ShowUser"*/ "@views/admin/user/ShowUser"),
+				meta: {
+					title: undefined,
+					middleware: [
+						middleware.auth
+					]
+				}
+			},
+			{
+				path: ':id/edit',
+				name: "AdminEditUser",
+				component: () => import (/* webpackChunkName: "EditUser"*/ "@views/admin/user/EditUser"),
+				meta: {
+					title: 'User | Edit',
+					middleware: [
+						middleware.auth
+					]
+				}
+			},
+		]
+	},
+]

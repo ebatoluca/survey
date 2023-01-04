@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\User' => 'App\Policies\UserPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// User model
+
+		    \App\Http\Events\User\Events\CreateEvent::class => [
+
+		        \App\Http\Events\User\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\User\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\User\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\User\Events\ExportEvent::class => [
+
+		        \App\Http\Events\User\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\User\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\User\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\User\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\User\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\User\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\User\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\User\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('user')
+	->as('user.')
+	->group(base_path('routes/api/models/user.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import userRoutes from './group/user'
+
+	// In the export section write
+
+	...userRoutes,
