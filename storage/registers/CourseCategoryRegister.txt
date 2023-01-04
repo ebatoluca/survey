@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\CourseCategory' => 'App\Policies\CourseCategoryPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// CourseCategory model
+
+		    \App\Http\Events\CourseCategory\Events\CreateEvent::class => [
+
+		        \App\Http\Events\CourseCategory\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\CourseCategory\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\CourseCategory\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\CourseCategory\Events\ExportEvent::class => [
+
+		        \App\Http\Events\CourseCategory\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\CourseCategory\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\CourseCategory\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\CourseCategory\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\CourseCategory\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\CourseCategory\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\CourseCategory\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\CourseCategory\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('course-category')
+	->as('course_category.')
+	->group(base_path('routes/api/models/course_category.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import courseCategoryRoutes from './group/course_category'
+
+	// In the export section write
+
+	...courseCategoryRoutes,
