@@ -24,6 +24,10 @@ export default defineConfig({
             '@plugins':    resolve(__dirname, 'resources/assets/plugins'),
             '@images':     resolve(__dirname, 'resources/assets/images'),
             '@app':        resolve(__dirname, 'resources/vue'),
+            '@router':     resolve(__dirname, 'resources/vue/router'),
+            '@vuex':       resolve(__dirname, 'resources/vue/vuex'),
+            '@layouts':       resolve(__dirname, 'resources/vue/layouts'),
+            '@views':       resolve(__dirname, 'resources/vue/views'),
         },
     },
 });

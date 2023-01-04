@@ -1,0 +1,138 @@
+/* Structure */
+
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-header {
+        background: #016893;
+    }
+
+    .form-body {
+        flex: 1;
+        overflow: auto;
+    }
+
+    .form-footer {
+        background: #f7f7f7;
+    }
+
+/* Header */
+
+    .headding {
+        padding: 5px 15px;
+        margin-bottom: 5px;
+        color: #fff;
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-weight: 100;
+    }
+
+/* Footer */
+
+    .progress-label {
+        margin-bottom: 5px !important;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .left-button, .right-button {
+        background: #016893;
+        color: #fff;
+        border: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 7px;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    .left-button i, .right-button i {
+        font-size: 16px;
+        font-weight: 600;
+    } 
+
+/* Body */
+
+    .question-title {
+        font-size: 32px;
+        font-weight: 600;
+        position: relative;
+    }
+
+    .question-description {
+        color: #c1c1c1;
+    }
+
+    .question-submit-button {
+        background: #387a6e;
+        color: #fff;
+        border: 0;
+        border-radius: 5px;
+        font-weight: 600;
+        padding: 15px 20px;
+        cursor: pointer;
+    }
+
+    .required-label {
+        font-size: 10px;
+        position: absolute;
+        top: 5px;
+        padding: 0px 10px;
+        background: #c1c1c1;
+        border-radius: 10px;
+        color: #000;
+        margin-left: 10px;
+    }
+
+    .submit-label {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+/* Text Input */
+
+    .text-input {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid #c1c1c1;
+        outline: 0;
+        font-size: 32px;
+        padding: 7px 0;
+        transition: border-color 0.2s;
+        color: #333;
+    }
+
+    .text-input::placeholder {
+        color: #d6d6d6;
+    }
+
+/* Single Likert Input */
+
+    .single-likert-input:checked + label {
+        background: red;
+    }
+
+/* Radio input */
+
+    .radio-input {
+        height: 24px;
+        width: 24px;
+        margin: 10px 0;
+    }
+
+    .radio-text {
+        font-size: 30px;
+        font-weight: 100;
+        margin: -1px 0px;
+    }

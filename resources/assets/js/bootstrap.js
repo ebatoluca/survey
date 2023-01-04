@@ -30,10 +30,18 @@
 
     import { createApp } from 'vue'
 
+    import router from '@app/router'
+
+    import store from '@app/vuex'
+
     import App from '@app/App.vue'
 
 // Vue App
 
     window.app = createApp(App);
+
+    app.use(store);
+
+    app.use(router);
 
     window.vm = app.mount('#app');

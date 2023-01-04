@@ -1,0 +1,50 @@
+import * as middleware from '@router/middleware'
+
+export default [
+	{
+		path: 'snake_case_model_name',
+		name: "AdminPluralPascalCaseModelName",
+		component: () => import (/* webpackChunkName: "AdminPluralPascalCaseModelName"*/ "@views/admin/snake_case_model_name/AdminPluralPascalCaseModelName"),
+		meta: {
+			title: 'Admin PluralPascalCaseModelName',
+			middleware: [
+				middleware.auth
+			]
+		},
+		children: [
+			{
+				path: 'create',
+				name: "AdminCreatePascalCaseModelName",
+				component: () => import (/* webpackChunkName: "CreatePascalCaseModelName"*/ "@views/admin/snake_case_model_name/CreatePascalCaseModelName"),
+				meta: {
+					title: 'PascalCaseModelName | Create',
+					middleware: [
+						middleware.auth
+					]
+				}
+			},
+			{
+				path: ':id/show',
+				name: "AdminShowPascalCaseModelName",
+				component: () => import (/* webpackChunkName: "ShowPascalCaseModelName"*/ "@views/admin/snake_case_model_name/ShowPascalCaseModelName"),
+				meta: {
+					title: undefined,
+					middleware: [
+						middleware.auth
+					]
+				}
+			},
+			{
+				path: ':id/edit',
+				name: "AdminEditPascalCaseModelName",
+				component: () => import (/* webpackChunkName: "EditPascalCaseModelName"*/ "@views/admin/snake_case_model_name/EditPascalCaseModelName"),
+				meta: {
+					title: 'PascalCaseModelName | Edit',
+					middleware: [
+						middleware.auth
+					]
+				}
+			},
+		]
+	},
+]

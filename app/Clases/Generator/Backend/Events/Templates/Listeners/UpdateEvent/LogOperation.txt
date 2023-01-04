@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Events\PascalCaseModelName\Listeners\UpdateEvent;
+
+use App\Models\Log;
+use App\Http\Events\PascalCaseModelName\Events\UpdateEvent;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+
+class LogOperation
+{
+    
+    public function __construct()
+    {
+        //
+    }
+
+    public function handle(UpdateEvent $event)
+    {
+
+        $request = $event->request;
+
+        $key = 'PascalCaseModelNameController.update';
+
+        $message = $this->getMessage($event);
+        
+        Log::make($request, $key, $message, true);
+
+    }
+
+    private function getMessage($event) 
+    {
+
+        $message = __('PascalCaseModelNameController.update');
+
+        return $message;
+
+    }
+
+}

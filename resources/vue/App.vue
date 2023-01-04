@@ -1,27 +1,9 @@
 <template>
 
-	<button class="uk-button uk-button-primary" @click="showAlert">Hola mundo</button>
+	<div id="AppWrapper" class="line-numbers">
 
-	<span uk-icon="custom"></span>
+		<router-view></router-view>
 
-	<i class="fa-thin fa-user"></i>
+	</div>
 
 </template>
-
-<script>
-
-	export default {
-
-		methods: {
-
-			showAlert() {
-
-				UIkit.notification('Hello world.');
-
-			}
-
-		}
-
-	}
-
-</script>
