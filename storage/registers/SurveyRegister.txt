@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\Survey' => 'App\Policies\SurveyPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// Survey model
+
+		    \App\Http\Events\Survey\Events\CreateEvent::class => [
+
+		        \App\Http\Events\Survey\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\Survey\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\Survey\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Survey\Events\ExportEvent::class => [
+
+		        \App\Http\Events\Survey\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\Survey\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\Survey\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\Survey\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Survey\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\Survey\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Survey\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\Survey\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('survey')
+	->as('survey.')
+	->group(base_path('routes/api/models/survey.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import surveyRoutes from './group/survey'
+
+	// In the export section write
+
+	...surveyRoutes,
