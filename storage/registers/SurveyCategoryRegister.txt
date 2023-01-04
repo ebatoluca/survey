@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\SurveyCategory' => 'App\Policies\SurveyCategoryPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// SurveyCategory model
+
+		    \App\Http\Events\SurveyCategory\Events\CreateEvent::class => [
+
+		        \App\Http\Events\SurveyCategory\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\SurveyCategory\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\SurveyCategory\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\SurveyCategory\Events\ExportEvent::class => [
+
+		        \App\Http\Events\SurveyCategory\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\SurveyCategory\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\SurveyCategory\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\SurveyCategory\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\SurveyCategory\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\SurveyCategory\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\SurveyCategory\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\SurveyCategory\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('survey-category')
+	->as('survey_category.')
+	->group(base_path('routes/api/models/survey_category.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import surveyCategoryRoutes from './group/survey_category'
+
+	// In the export section write
+
+	...surveyCategoryRoutes,
