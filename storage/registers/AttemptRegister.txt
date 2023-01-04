@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\Attempt' => 'App\Policies\AttemptPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// Attempt model
+
+		    \App\Http\Events\Attempt\Events\CreateEvent::class => [
+
+		        \App\Http\Events\Attempt\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\Attempt\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\Attempt\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Attempt\Events\ExportEvent::class => [
+
+		        \App\Http\Events\Attempt\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\Attempt\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\Attempt\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\Attempt\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Attempt\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\Attempt\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Attempt\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\Attempt\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('attempt')
+	->as('attempt.')
+	->group(base_path('routes/api/models/attempt.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import attemptRoutes from './group/attempt'
+
+	// In the export section write
+
+	...attemptRoutes,
