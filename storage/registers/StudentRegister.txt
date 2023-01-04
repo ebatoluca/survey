@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\Student' => 'App\Policies\StudentPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// Student model
+
+		    \App\Http\Events\Student\Events\CreateEvent::class => [
+
+		        \App\Http\Events\Student\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\Student\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\Student\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Student\Events\ExportEvent::class => [
+
+		        \App\Http\Events\Student\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\Student\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\Student\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\Student\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Student\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\Student\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Student\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\Student\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('student')
+	->as('student.')
+	->group(base_path('routes/api/models/student.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import studentRoutes from './group/student'
+
+	// In the export section write
+
+	...studentRoutes,
