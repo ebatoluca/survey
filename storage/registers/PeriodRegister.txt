@@ -1,0 +1,61 @@
+## Add this line of code in your "policies" array in the AuthServiceProvider file
+
+	'App\Models\Period' => 'App\Policies\PeriodPolicy',
+
+## Add this code in your "listen" array in EventServiceProvider
+	
+		// Period model
+
+		    \App\Http\Events\Period\Events\CreateEvent::class => [
+
+		        \App\Http\Events\Period\Listeners\CreateEvent\LogOperation::class,
+
+		    ],  
+
+		    \App\Http\Events\Period\Events\DeleteEvent::class => [
+
+		        \App\Http\Events\Period\Listeners\DeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Period\Events\ExportEvent::class => [
+
+		        \App\Http\Events\Period\Listeners\ExportEvent\LogOperation::class,
+
+		        \App\Http\Events\Period\Listeners\ExportEvent\SendNotification::class,
+
+		    ],
+
+		    \App\Http\Events\Period\Events\ForceDeleteEvent::class => [
+
+		        \App\Http\Events\Period\Listeners\ForceDeleteEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Period\Events\RestoreEvent::class => [
+
+		        \App\Http\Events\Period\Listeners\RestoreEvent\LogOperation::class,
+
+		    ],
+
+		    \App\Http\Events\Period\Events\UpdateEvent::class => [
+
+		        \App\Http\Events\Period\Listeners\UpdateEvent\LogOperation::class,
+
+		    ], 
+
+## Add this line of code in your /api/models.php file to register the model routes
+
+Route::prefix('period')
+	->as('period.')
+	->group(base_path('routes/api/models/period.php'));
+
+## Add this line en vue rputer admin index.js group /resources/vue/router/routes/admin/routes/index.js
+	
+	// In the import section write:
+
+	import periodRoutes from './group/period'
+
+	// In the export section write
+
+	...periodRoutes,
