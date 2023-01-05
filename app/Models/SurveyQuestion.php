@@ -26,18 +26,46 @@ class SurveyQuestion extends Model
         SurveyQuestionOperations,
         SurveyQuestionMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'text',
+        'description',
+        'type',
+        'order',
+        'payload',
+        'survey_category_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'text',
+        'description',
+        'type',
+        'order',
+        'survey_category_id',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'text',
+        'description',
+        'type',
+        'order',
+        'survey_category_id',    
+    ];
 
-    protected $casts = [];
+    protected $casts = [
+        'payload' => 'json'
+    ];
 
     protected $protected_metas = [];
 
     protected $editable_metas = [];
 
     public $loadable_relations = [];
+
+    public $allowed_types = [
+        'text',
+        'checkbox',
+        'select',
+        'radio',
+    ];
 
 }

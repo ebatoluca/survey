@@ -26,11 +26,22 @@ class SurveyCategory extends Model
         SurveyCategoryOperations,
         SurveyCategoryMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'order',
+        'survey_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'name',
+        'order',
+        'survey_id',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'name',
+        'order',
+    ];
 
     protected $casts = [];
 

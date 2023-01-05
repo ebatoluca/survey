@@ -28,8 +28,8 @@
 
 <script>
 	
-	import CrudTemplate from '@templates/CrudTemplate'
-	import FilterForm from '@forms/filters/PeriodFilterForm'
+	import CrudTemplate from '@templates/CrudTemplate.vue'
+	import FilterForm from '@forms/filters/PeriodFilterForm.vue'
 	import * as model from '@js/models/period' 
 
 	export default {

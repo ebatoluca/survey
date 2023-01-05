@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class UserMeta extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'key',
+        'value',
+        'user_id'
+    ];
+
+    public function user() 
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

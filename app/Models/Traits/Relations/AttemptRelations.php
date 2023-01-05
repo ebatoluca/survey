@@ -8,6 +8,29 @@ namespace App\Models\Traits\Relations;
 trait AttemptRelations
 {
 	
-    
+    public function survey()
+    {
+    	return $this->belongsTo('App\Models\Survey');
+    }
+
+    public function period()
+    {
+    	return $this->belongsTo('App\Models\Period');
+    }
+
+    public function student()
+    {
+    	return $this->belongsTo('App\Models\Student');
+    }
+
+    public function answers()
+    {
+    	return $this->hasMany('App\Modles\SurveyAnswers');
+    }
+
+    public function classroom()
+    {
+    	return $this->belongsTo('App\Models\Classroom');
+    }
 
 }

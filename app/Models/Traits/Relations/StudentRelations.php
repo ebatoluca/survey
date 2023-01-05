@@ -8,6 +8,14 @@ namespace App\Models\Traits\Relations;
 trait StudentRelations
 {
 	
-    
+    public function user()
+    {
+    	return $this->belongsTo('App\Models\User');
+    }
+
+    public function attempts()
+    {
+    	return $this->hasMany('App\Models\Attempt');
+    }
 
 }

@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'course_category',
 		name: "AdminCourseCategories",
-		component: () => import (/* webpackChunkName: "AdminCourseCategories"*/ "@views/admin/course_category/AdminCourseCategories"),
+		component: () => import (/* webpackChunkName: "AdminCourseCategories"*/ "@views/admin/course_category/AdminCourseCategories.vue"),
 		meta: {
 			title: 'Admin CourseCategories',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateCourseCategory",
-				component: () => import (/* webpackChunkName: "CreateCourseCategory"*/ "@views/admin/course_category/CreateCourseCategory"),
+				component: () => import (/* webpackChunkName: "CreateCourseCategory"*/ "@views/admin/course_category/CreateCourseCategory.vue"),
 				meta: {
 					title: 'CourseCategory | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowCourseCategory",
-				component: () => import (/* webpackChunkName: "ShowCourseCategory"*/ "@views/admin/course_category/ShowCourseCategory"),
+				component: () => import (/* webpackChunkName: "ShowCourseCategory"*/ "@views/admin/course_category/ShowCourseCategory.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditCourseCategory",
-				component: () => import (/* webpackChunkName: "EditCourseCategory"*/ "@views/admin/course_category/EditCourseCategory"),
+				component: () => import (/* webpackChunkName: "EditCourseCategory"*/ "@views/admin/course_category/EditCourseCategory.vue"),
 				meta: {
 					title: 'CourseCategory | Edit',
 					middleware: [

@@ -8,6 +8,14 @@ namespace App\Models\Traits\Relations;
 trait CourseRelations
 {
 	
-    
+    public function category()
+    {
+    	return $this->belongsTo('App\Models\CourseCategory', 'course_category_id');
+    }
+
+    public function classrooms()
+    {
+    	return $this->hasMany('App\Models\Classroom');
+    }
 
 }

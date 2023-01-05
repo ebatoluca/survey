@@ -10,6 +10,8 @@ trait SurveyStorage
 
         $survey = $this->create($request->only($this->creatable));
 
+        $survey->updateModelMetas($request);
+
         return $survey;
 
     }
@@ -18,6 +20,8 @@ trait SurveyStorage
     {
      
         $this->update($request->only($this->updatable));
+
+        $this->updateModelMetas($request);
 
         return $this;
 

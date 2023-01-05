@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('survey_question_metas', function (Blueprint $table) {
             $table->id();
+            $table->string('key');
+            $table->longText('value');
+            $table->foreignId('survey_question_id');
             $table->timestamps();
         });
     }

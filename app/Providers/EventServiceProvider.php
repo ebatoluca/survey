@@ -9,34 +9,64 @@ use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
-    /**
-     * The event to listener mappings for the application.
-     *
-     * @var array<class-string, array<int, class-string>>
-     */
+
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
     ];
 
-    /**
-     * Register any events for your application.
-     *
-     * @return void
-     */
     public function boot()
     {
-        //
+
+        $this->registerModelEvents();
+
     }
 
-    /**
-     * Determine if events and listeners should be automatically discovered.
-     *
-     * @return bool
-     */
+    private function registerModelEvents() 
+    {
+
+        $basePath = app_path('Http/Events');
+
+        $namespace = 'App\Http\Events\\';
+
+        $models = array_diff(scandir($basePath), array('.', '..'));
+
+        foreach($models as $model) {
+
+            $eventsPath = $basePath . '/' . $model . '/' . 'Events';
+
+            $events = array_diff(scandir($eventsPath), array('.', '..'));
+
+            foreach($events as $event) {
+
+                $eventName = preg_replace('/\\.[^.\\s]{3,4}$/', '', $event);
+
+                $listenersPath = $basePath . '/' . $model . '/' . 'Listeners/' . $eventName;
+
+                $listeners = array_diff(scandir($listenersPath), array('.', '..'));
+
+                foreach($listeners as $listener) {
+
+                    $listenerName = preg_replace('/\\.[^.\\s]{3,4}$/', '', $listener);
+
+                    $event = $namespace . $model . '\\Events\\' . $eventName;
+
+                    $listener = $namespace . $model . '\\Listeners\\' . $eventName . '\\' . $listenerName;
+
+                    Event::listen($event, $listener);
+
+                }
+
+            }
+
+        }
+
+    }
+
     public function shouldDiscoverEvents()
     {
         return false;
     }
+    
 }

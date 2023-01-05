@@ -23,7 +23,7 @@
 
 <script>
 	
-	import SurveyCrud from '@cruds/SurveyCrud'
+	import SurveyCrud from '@cruds/SurveyCrud.vue'
 
 	export default {
 

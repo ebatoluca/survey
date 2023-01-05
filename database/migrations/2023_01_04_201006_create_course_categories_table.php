@@ -15,6 +15,8 @@ class CreateCourseCategoriesTable extends Migration
     {
         Schema::create('course_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('parent_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'survey_category',
 		name: "AdminSurveyCategories",
-		component: () => import (/* webpackChunkName: "AdminSurveyCategories"*/ "@views/admin/survey_category/AdminSurveyCategories"),
+		component: () => import (/* webpackChunkName: "AdminSurveyCategories"*/ "@views/admin/survey_category/AdminSurveyCategories.vue"),
 		meta: {
 			title: 'Admin SurveyCategories',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateSurveyCategory",
-				component: () => import (/* webpackChunkName: "CreateSurveyCategory"*/ "@views/admin/survey_category/CreateSurveyCategory"),
+				component: () => import (/* webpackChunkName: "CreateSurveyCategory"*/ "@views/admin/survey_category/CreateSurveyCategory.vue"),
 				meta: {
 					title: 'SurveyCategory | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowSurveyCategory",
-				component: () => import (/* webpackChunkName: "ShowSurveyCategory"*/ "@views/admin/survey_category/ShowSurveyCategory"),
+				component: () => import (/* webpackChunkName: "ShowSurveyCategory"*/ "@views/admin/survey_category/ShowSurveyCategory.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditSurveyCategory",
-				component: () => import (/* webpackChunkName: "EditSurveyCategory"*/ "@views/admin/survey_category/EditSurveyCategory"),
+				component: () => import (/* webpackChunkName: "EditSurveyCategory"*/ "@views/admin/survey_category/EditSurveyCategory.vue"),
 				meta: {
 					title: 'SurveyCategory | Edit',
 					middleware: [

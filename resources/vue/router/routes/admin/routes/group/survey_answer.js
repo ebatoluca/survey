@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'survey_answer',
 		name: "AdminSurveyAnswers",
-		component: () => import (/* webpackChunkName: "AdminSurveyAnswers"*/ "@views/admin/survey_answer/AdminSurveyAnswers"),
+		component: () => import (/* webpackChunkName: "AdminSurveyAnswers"*/ "@views/admin/survey_answer/AdminSurveyAnswers.vue"),
 		meta: {
 			title: 'Admin SurveyAnswers',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateSurveyAnswer",
-				component: () => import (/* webpackChunkName: "CreateSurveyAnswer"*/ "@views/admin/survey_answer/CreateSurveyAnswer"),
+				component: () => import (/* webpackChunkName: "CreateSurveyAnswer"*/ "@views/admin/survey_answer/CreateSurveyAnswer.vue"),
 				meta: {
 					title: 'SurveyAnswer | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowSurveyAnswer",
-				component: () => import (/* webpackChunkName: "ShowSurveyAnswer"*/ "@views/admin/survey_answer/ShowSurveyAnswer"),
+				component: () => import (/* webpackChunkName: "ShowSurveyAnswer"*/ "@views/admin/survey_answer/ShowSurveyAnswer.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditSurveyAnswer",
-				component: () => import (/* webpackChunkName: "EditSurveyAnswer"*/ "@views/admin/survey_answer/EditSurveyAnswer"),
+				component: () => import (/* webpackChunkName: "EditSurveyAnswer"*/ "@views/admin/survey_answer/EditSurveyAnswer.vue"),
 				meta: {
 					title: 'SurveyAnswer | Edit',
 					middleware: [

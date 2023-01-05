@@ -28,8 +28,8 @@
 
 <script>
 	
-	import CrudTemplate from '@templates/CrudTemplate'
-	import FilterForm from '@forms/filters/ClassroomFilterForm'
+	import CrudTemplate from '@templates/CrudTemplate.vue'
+	import FilterForm from '@forms/filters/ClassroomFilterForm.vue'
 	import * as model from '@js/models/classroom' 
 
 	export default {

@@ -26,13 +26,23 @@ class SurveyAnswer extends Model
         SurveyAnswerOperations,
         SurveyAnswerMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'content',
+        'survey_question_id',
+        'attempt_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'content',
+        'survey_question_id',
+        'attempt_id',
+    ];
 
     protected $updatable = [];
 
-    protected $casts = [];
+    protected $casts = [
+        'payload' => 'json'
+    ];
 
     protected $protected_metas = [];
 

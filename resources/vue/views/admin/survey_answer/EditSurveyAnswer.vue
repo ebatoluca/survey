@@ -42,7 +42,7 @@
 
 <script>
 
-	import EditForm from '@forms/models/survey_answer/EditForm'
+	import EditForm from '@forms/models/survey_answer/EditForm.vue'
 
 	export default {
 

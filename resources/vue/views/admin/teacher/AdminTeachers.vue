@@ -23,7 +23,7 @@
 
 <script>
 	
-	import TeacherCrud from '@cruds/TeacherCrud'
+	import TeacherCrud from '@cruds/TeacherCrud.vue'
 
 	export default {
 

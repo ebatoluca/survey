@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'course',
 		name: "AdminCourses",
-		component: () => import (/* webpackChunkName: "AdminCourses"*/ "@views/admin/course/AdminCourses"),
+		component: () => import (/* webpackChunkName: "AdminCourses"*/ "@views/admin/course/AdminCourses.vue"),
 		meta: {
 			title: 'Admin Courses',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateCourse",
-				component: () => import (/* webpackChunkName: "CreateCourse"*/ "@views/admin/course/CreateCourse"),
+				component: () => import (/* webpackChunkName: "CreateCourse"*/ "@views/admin/course/CreateCourse.vue"),
 				meta: {
 					title: 'Course | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowCourse",
-				component: () => import (/* webpackChunkName: "ShowCourse"*/ "@views/admin/course/ShowCourse"),
+				component: () => import (/* webpackChunkName: "ShowCourse"*/ "@views/admin/course/ShowCourse.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditCourse",
-				component: () => import (/* webpackChunkName: "EditCourse"*/ "@views/admin/course/EditCourse"),
+				component: () => import (/* webpackChunkName: "EditCourse"*/ "@views/admin/course/EditCourse.vue"),
 				meta: {
 					title: 'Course | Edit',
 					middleware: [

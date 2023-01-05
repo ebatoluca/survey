@@ -15,6 +15,9 @@ class CreateSurveysTable extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('status');
+            $table->longText('payload')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

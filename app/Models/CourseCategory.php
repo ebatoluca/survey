@@ -26,11 +26,20 @@ class CourseCategory extends Model
         CourseCategoryOperations,
         CourseCategoryMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'parent_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'name',
+        'parent_id',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'name',
+        'parent_id',
+    ];
 
     protected $casts = [];
 

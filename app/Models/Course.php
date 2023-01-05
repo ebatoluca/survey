@@ -26,11 +26,20 @@ class Course extends Model
         CourseOperations,
         CourseMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'course_category_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'name',
+        'course_category_id',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'name',
+        'course_category_id',
+    ];
 
     protected $casts = [];
 

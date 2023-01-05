@@ -23,7 +23,7 @@
 
 <script>
 	
-	import StudentCrud from '@cruds/StudentCrud'
+	import StudentCrud from '@cruds/StudentCrud.vue'
 
 	export default {
 

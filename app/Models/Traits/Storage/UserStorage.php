@@ -10,6 +10,8 @@ trait UserStorage
 
         $user = $this->create($request->only($this->creatable));
 
+        $user->updateModelMetas($request);
+
         return $user;
 
     }
@@ -18,6 +20,8 @@ trait UserStorage
     {
      
         $this->update($request->only($this->updatable));
+
+        $this->updateModelMetas($request);
 
         return $this;
 

@@ -15,6 +15,11 @@ class CreateAttemptsTable extends Migration
     {
         Schema::create('attempts', function (Blueprint $table) {
             $table->id();
+            $table->string('status');
+            $table->foreignId('period_id');
+            $table->foreignId('student_id');
+            $table->foreignId('classroom_id');
+            $table->foreignId('survey_id');
             $table->timestamps();
             $table->softDeletes();
         });

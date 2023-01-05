@@ -51,7 +51,7 @@
 
 <script>
 	
-	import TextInputComponent from '@components/forms/TextInputComponent'
+	import TextInputComponent from '@components/forms/TextInputComponent.vue'
 
 	export default {
 

@@ -23,7 +23,7 @@
 
 <script>
 	
-	import PeriodCrud from '@cruds/PeriodCrud'
+	import PeriodCrud from '@cruds/PeriodCrud.vue'
 
 	export default {
 

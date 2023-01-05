@@ -40,7 +40,7 @@
 
 <script>
 
-	import CreateForm from '@forms/models/survey/CreateForm'
+	import CreateForm from '@forms/models/survey/CreateForm.vue'
 
 	export default {
 

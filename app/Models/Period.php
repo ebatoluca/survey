@@ -26,11 +26,17 @@ class Period extends Model
         PeriodOperations,
         PeriodMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'name',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'name',
+    ];
 
     protected $casts = [];
 

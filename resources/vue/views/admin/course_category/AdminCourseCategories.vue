@@ -23,7 +23,7 @@
 
 <script>
 	
-	import CourseCategoryCrud from '@cruds/CourseCategoryCrud'
+	import CourseCategoryCrud from '@cruds/CourseCategoryCrud.vue'
 
 	export default {
 

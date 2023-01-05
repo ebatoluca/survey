@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'attempt',
 		name: "AdminAttempts",
-		component: () => import (/* webpackChunkName: "AdminAttempts"*/ "@views/admin/attempt/AdminAttempts"),
+		component: () => import (/* webpackChunkName: "AdminAttempts"*/ "@views/admin/attempt/AdminAttempts.vue"),
 		meta: {
 			title: 'Admin Attempts',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateAttempt",
-				component: () => import (/* webpackChunkName: "CreateAttempt"*/ "@views/admin/attempt/CreateAttempt"),
+				component: () => import (/* webpackChunkName: "CreateAttempt"*/ "@views/admin/attempt/CreateAttempt.vue"),
 				meta: {
 					title: 'Attempt | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowAttempt",
-				component: () => import (/* webpackChunkName: "ShowAttempt"*/ "@views/admin/attempt/ShowAttempt"),
+				component: () => import (/* webpackChunkName: "ShowAttempt"*/ "@views/admin/attempt/ShowAttempt.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditAttempt",
-				component: () => import (/* webpackChunkName: "EditAttempt"*/ "@views/admin/attempt/EditAttempt"),
+				component: () => import (/* webpackChunkName: "EditAttempt"*/ "@views/admin/attempt/EditAttempt.vue"),
 				meta: {
 					title: 'Attempt | Edit',
 					middleware: [

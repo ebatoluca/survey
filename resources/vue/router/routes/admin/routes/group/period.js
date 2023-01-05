@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'period',
 		name: "AdminPeriods",
-		component: () => import (/* webpackChunkName: "AdminPeriods"*/ "@views/admin/period/AdminPeriods"),
+		component: () => import (/* webpackChunkName: "AdminPeriods"*/ "@views/admin/period/AdminPeriods.vue"),
 		meta: {
 			title: 'Admin Periods',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreatePeriod",
-				component: () => import (/* webpackChunkName: "CreatePeriod"*/ "@views/admin/period/CreatePeriod"),
+				component: () => import (/* webpackChunkName: "CreatePeriod"*/ "@views/admin/period/CreatePeriod.vue"),
 				meta: {
 					title: 'Period | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowPeriod",
-				component: () => import (/* webpackChunkName: "ShowPeriod"*/ "@views/admin/period/ShowPeriod"),
+				component: () => import (/* webpackChunkName: "ShowPeriod"*/ "@views/admin/period/ShowPeriod.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditPeriod",
-				component: () => import (/* webpackChunkName: "EditPeriod"*/ "@views/admin/period/EditPeriod"),
+				component: () => import (/* webpackChunkName: "EditPeriod"*/ "@views/admin/period/EditPeriod.vue"),
 				meta: {
 					title: 'Period | Edit',
 					middleware: [

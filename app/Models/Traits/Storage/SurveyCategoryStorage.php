@@ -8,7 +8,11 @@ trait SurveyCategoryStorage
     public function createModel($request)
     {
 
-        $surveyCategory = $this->create($request->only($this->creatable));
+        $order = self::where('survey_id', $request->survey_id)->count();
+
+        $surveyCategory = $this->create($request->only($this->creatable) + [
+            'order' => ++$order
+        ]);
 
         return $surveyCategory;
 

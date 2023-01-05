@@ -8,6 +8,14 @@ namespace App\Models\Traits\Relations;
 trait SurveyCategoryRelations
 {
 	
-    
+    public function survey()
+    {
+    	return $this->belongsTo('App\Models\Survey');
+    }
+
+    public function questions()
+    {
+    	return $this->hasMany('App\Models\SurveyQuestion');
+    }
 
 }

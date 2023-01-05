@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'user',
 		name: "AdminUsers",
-		component: () => import (/* webpackChunkName: "AdminUsers"*/ "@views/admin/user/AdminUsers"),
+		component: () => import (/* webpackChunkName: "AdminUsers"*/ "@views/admin/user/AdminUsers.vue"),
 		meta: {
 			title: 'Admin Users',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateUser",
-				component: () => import (/* webpackChunkName: "CreateUser"*/ "@views/admin/user/CreateUser"),
+				component: () => import (/* webpackChunkName: "CreateUser"*/ "@views/admin/user/CreateUser.vue"),
 				meta: {
 					title: 'User | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowUser",
-				component: () => import (/* webpackChunkName: "ShowUser"*/ "@views/admin/user/ShowUser"),
+				component: () => import (/* webpackChunkName: "ShowUser"*/ "@views/admin/user/ShowUser.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditUser",
-				component: () => import (/* webpackChunkName: "EditUser"*/ "@views/admin/user/EditUser"),
+				component: () => import (/* webpackChunkName: "EditUser"*/ "@views/admin/user/EditUser.vue"),
 				meta: {
 					title: 'User | Edit',
 					middleware: [

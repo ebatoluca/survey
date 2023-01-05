@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'classroom',
 		name: "AdminClassrooms",
-		component: () => import (/* webpackChunkName: "AdminClassrooms"*/ "@views/admin/classroom/AdminClassrooms"),
+		component: () => import (/* webpackChunkName: "AdminClassrooms"*/ "@views/admin/classroom/AdminClassrooms.vue"),
 		meta: {
 			title: 'Admin Classrooms',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateClassroom",
-				component: () => import (/* webpackChunkName: "CreateClassroom"*/ "@views/admin/classroom/CreateClassroom"),
+				component: () => import (/* webpackChunkName: "CreateClassroom"*/ "@views/admin/classroom/CreateClassroom.vue"),
 				meta: {
 					title: 'Classroom | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowClassroom",
-				component: () => import (/* webpackChunkName: "ShowClassroom"*/ "@views/admin/classroom/ShowClassroom"),
+				component: () => import (/* webpackChunkName: "ShowClassroom"*/ "@views/admin/classroom/ShowClassroom.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditClassroom",
-				component: () => import (/* webpackChunkName: "EditClassroom"*/ "@views/admin/classroom/EditClassroom"),
+				component: () => import (/* webpackChunkName: "EditClassroom"*/ "@views/admin/classroom/EditClassroom.vue"),
 				meta: {
 					title: 'Classroom | Edit',
 					middleware: [

@@ -26,9 +26,13 @@ class Student extends Model
         StudentOperations,
         StudentMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'user_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'user_id',
+    ];
 
     protected $updatable = [];
 

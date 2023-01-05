@@ -26,11 +26,24 @@ class Classroom extends Model
         ClassroomOperations,
         ClassroomMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'status',
+        'course_id',
+        'teacher_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'name',
+        'status',
+        'course_id',
+        'teacher_id',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'name',
+        'status',
+    ];
 
     protected $casts = [];
 
@@ -39,5 +52,11 @@ class Classroom extends Model
     protected $editable_metas = [];
 
     public $loadable_relations = [];
+
+    public $allowed_status = [
+        'pending',
+        'active',
+        'hidden',
+    ];
 
 }

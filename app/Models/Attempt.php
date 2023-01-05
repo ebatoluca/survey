@@ -26,11 +26,25 @@ class Attempt extends Model
         AttemptOperations,
         AttemptMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'status',
+        'period_id',
+        'student_id',
+        'classroom_id',
+        'survey_id',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'status',
+        'period_id',
+        'student_id',
+        'classroom_id',
+        'survey_id',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'status',
+    ];
 
     protected $casts = [];
 
@@ -39,5 +53,11 @@ class Attempt extends Model
     protected $editable_metas = [];
 
     public $loadable_relations = [];
+
+    public $allowed_status = [
+        'started',
+        'finished',
+        'unfinished', // No resuelto en más de 2 días.
+    ];
 
 }

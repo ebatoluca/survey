@@ -8,6 +8,24 @@ namespace App\Models\Traits\Relations;
 trait SurveyRelations
 {
 	
-    
+    public function classrooms()
+    {
+    	return $this->belongsToMany('App\Models\Classroom');
+    }
+
+    public function categories()
+    {
+    	return $this->hasMany('App\Models\SurveyCategory');
+    }
+
+    public function attempts()
+    {
+    	return $this->hasMany('App\Models\Attempt');
+    }
+
+    public function metas()
+    {
+    	return $this->hasMany('App\Models\SurveyMeta');
+    }
 
 }

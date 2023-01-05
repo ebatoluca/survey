@@ -8,6 +8,19 @@ namespace App\Models\Traits\Relations;
 trait CourseCategoryRelations
 {
 	
-    
+    public function parent()
+    {
+    	return $this->belongsTo('App\Models\CourseCategory', 'parent_id');
+    }
+
+    public function children()
+    {
+    	return $this->hasMany('App\Models\CourseCategory', 'parent_id');
+    }
+
+    public function courses() 
+    {
+    	return $this->hasMany('App\Models\Course');
+    }
 
 }

@@ -23,7 +23,7 @@
 
 <script>
 	
-	import SurveyCategoryCrud from '@cruds/SurveyCategoryCrud'
+	import SurveyCategoryCrud from '@cruds/SurveyCategoryCrud.vue'
 
 	export default {
 

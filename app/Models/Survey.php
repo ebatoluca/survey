@@ -26,18 +26,36 @@ class Survey extends Model
         SurveyOperations,
         SurveyMutators;
         
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'status',
+        'payload',
+    ];
 
-    protected $creatable = [];
+    protected $creatable = [
+        'name',
+        'status',
+    ];
 
-    protected $updatable = [];
+    protected $updatable = [
+        'name',
+        'status',
+    ];
 
-    protected $casts = [];
+    protected $casts = [
+        'payload' => 'json'
+    ];
 
     protected $protected_metas = [];
 
     protected $editable_metas = [];
 
     public $loadable_relations = [];
+
+    public $allowed_status = [
+        'draft',
+        'active', // Permite añadir nuevas respuestas
+        'close'
+    ];
 
 }

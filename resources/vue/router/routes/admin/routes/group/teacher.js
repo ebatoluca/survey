@@ -4,7 +4,7 @@ export default [
 	{
 		path: 'teacher',
 		name: "AdminTeachers",
-		component: () => import (/* webpackChunkName: "AdminTeachers"*/ "@views/admin/teacher/AdminTeachers"),
+		component: () => import (/* webpackChunkName: "AdminTeachers"*/ "@views/admin/teacher/AdminTeachers.vue"),
 		meta: {
 			title: 'Admin Teachers',
 			middleware: [
@@ -15,7 +15,7 @@ export default [
 			{
 				path: 'create',
 				name: "AdminCreateTeacher",
-				component: () => import (/* webpackChunkName: "CreateTeacher"*/ "@views/admin/teacher/CreateTeacher"),
+				component: () => import (/* webpackChunkName: "CreateTeacher"*/ "@views/admin/teacher/CreateTeacher.vue"),
 				meta: {
 					title: 'Teacher | Create',
 					middleware: [
@@ -26,7 +26,7 @@ export default [
 			{
 				path: ':id/show',
 				name: "AdminShowTeacher",
-				component: () => import (/* webpackChunkName: "ShowTeacher"*/ "@views/admin/teacher/ShowTeacher"),
+				component: () => import (/* webpackChunkName: "ShowTeacher"*/ "@views/admin/teacher/ShowTeacher.vue"),
 				meta: {
 					title: undefined,
 					middleware: [
@@ -37,7 +37,7 @@ export default [
 			{
 				path: ':id/edit',
 				name: "AdminEditTeacher",
-				component: () => import (/* webpackChunkName: "EditTeacher"*/ "@views/admin/teacher/EditTeacher"),
+				component: () => import (/* webpackChunkName: "EditTeacher"*/ "@views/admin/teacher/EditTeacher.vue"),
 				meta: {
 					title: 'Teacher | Edit',
 					middleware: [

@@ -23,7 +23,7 @@
 
 <script>
 	
-	import AttemptCrud from '@cruds/AttemptCrud'
+	import AttemptCrud from '@cruds/AttemptCrud.vue'
 
 	export default {
 

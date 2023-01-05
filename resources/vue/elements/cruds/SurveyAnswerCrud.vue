@@ -28,8 +28,8 @@
 
 <script>
 	
-	import CrudTemplate from '@templates/CrudTemplate'
-	import FilterForm from '@forms/filters/SurveyAnswerFilterForm'
+	import CrudTemplate from '@templates/CrudTemplate.vue'
+	import FilterForm from '@forms/filters/SurveyAnswerFilterForm.vue'
 	import * as model from '@js/models/survey_answer' 
 
 	export default {

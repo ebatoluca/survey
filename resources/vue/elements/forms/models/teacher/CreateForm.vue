@@ -26,8 +26,8 @@
 
 <script>
 
-    import TextInputComponent from '@components/forms/TextInputComponent'
-    import ButtonComponent from '@components/forms/ButtonComponent'
+    import TextInputComponent from '@components/forms/TextInputComponent.vue'
+    import ButtonComponent from '@components/forms/ButtonComponent.vue'
 	
 	export default {
 

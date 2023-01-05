@@ -8,6 +8,9 @@ namespace App\Models\Traits\Relations;
 trait PeriodRelations
 {
 	
-    
+    public function attempts()
+    {
+    	return $this->hasMany('App\Models\Attempt');
+    }
 
 }

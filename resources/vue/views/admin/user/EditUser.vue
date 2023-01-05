@@ -42,7 +42,7 @@
 
 <script>
 
-	import EditForm from '@forms/models/user/EditForm'
+	import EditForm from '@forms/models/user/EditForm.vue'
 
 	export default {
 

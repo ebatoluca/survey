@@ -8,7 +8,13 @@ trait SurveyQuestionStorage
     public function createModel($request)
     {
 
-        $surveyQuestion = $this->create($request->only($this->creatable));
+        $order = self::where('survey_category_id', $request->survey_category_id)->count();
+
+        $surveyQuestion = $this->create($request->only($this->creatable) + [
+            'order' => ++$order
+        ]);
+
+        $surveyQuestion->updateModelMetas($request);
 
         return $surveyQuestion;
 
@@ -18,6 +24,8 @@ trait SurveyQuestionStorage
     {
      
         $this->update($request->only($this->updatable));
+
+        $this->updateModelMetas($request);
 
         return $this;
 

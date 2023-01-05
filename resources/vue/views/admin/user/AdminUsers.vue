@@ -23,7 +23,7 @@
 
 <script>
 	
-	import UserCrud from '@cruds/UserCrud'
+	import UserCrud from '@cruds/UserCrud.vue'
 
 	export default {
 

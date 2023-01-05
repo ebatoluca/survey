@@ -15,6 +15,12 @@ class CreateSurveyQuestionsTable extends Migration
     {
         Schema::create('survey_questions', function (Blueprint $table) {
             $table->id();
+            $table->text('text');
+            $table->longText('description');
+            $table->string('type');
+            $table->unsignedSmallInteger('order');
+            $table->longText('payload')->nullable();
+            $table->foreignId('survey_category_id');
             $table->timestamps();
             $table->softDeletes();
         });
